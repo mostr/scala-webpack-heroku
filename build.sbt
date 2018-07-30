@@ -48,7 +48,7 @@ lazy val root = (project in file("."))
     name := "sample",
     herokuAppName in Compile := "sample-pipeline",
     libraryDependencies ++= akkaDeps ++ loggerDeps ++ scalaTestDeps ++ otherDeps,
-    stage := stage.dependsOn(yarnTask.toTask(" run build")).value,
+    stage := stage.dependsOn(yarnTask.toTask(" install"), yarnTask.toTask(" run build")).value,
     unmanagedResourceDirectories in Compile := {
       (unmanagedResourceDirectories in Compile).value ++ List(
         baseDirectory.value / ui.base.getName / "build"
