@@ -1,0 +1,14 @@
+*.class
+*.log
+
+# build
+target/
+
+# ide
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# macos
+.DS_Store

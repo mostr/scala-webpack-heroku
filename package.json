@@ -1,0 +1,9 @@
+{
+  "name": "ui",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "yarn": "1.9.2",
+    "nmp": "5.7.1"
+  }
+}
