@@ -30,9 +30,10 @@ lazy val commonSettings = Seq(
 //    haltOnCmdResultError(Process("yarn install", baseDirectory.value / "ui").!)
 //  },
   yarnTask := {
+    haltOnCmdResultError(Process("yarn install --production=false", baseDirectory.value / "ui") !)
     val taskName = spaceDelimited("<arg>").parsed.mkString(" ")
     val localYarnCommand = "yarn " + taskName
-    Process(localYarnCommand, baseDirectory.value / "ui") !
+    haltOnCmdResultError(Process(localYarnCommand, baseDirectory.value / "ui") !)
   }
 )
 
